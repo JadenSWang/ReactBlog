@@ -14,6 +14,12 @@ class Blog extends Component {
       ],
       [
         "Pulvinar mattis nunc sed blandit libero volutpat. Viverra ipsum nunc aliquet bibendum enim facilisis. In metus vulputate eu scelerisque felis imperdiet proin. Iaculis eu non diam phasellus vestibulum lorem sed. Diam quis enim lobortis scelerisque fermentum. Eget velit aliquet sagittis id consectetur purus ut faucibus pulvinar. Pulvinar etiam non quam lacus suspendisse faucibus interdum posuere lorem. Facilisis volutpat est velit egestas dui id ornare arcu. Non blandit massa enim nec dui nunc mattis enim. Mollis aliquam ut porttitor leo a diam sollicitudin. Euismod nisi porta lorem mollis aliquam ut."
+      ],
+      [
+        "Pulvinar mattis nunc sed blandit libero volutpat. Viverra ipsum nunc aliquet bibendum enim facilisis. In metus vulputate eu scelerisque felis imperdiet proin. Iaculis eu non diam phasellus vestibulum lorem sed. Diam quis enim lobortis scelerisque fermentum. Eget velit aliquet sagittis id consectetur purus ut faucibus pulvinar. Pulvinar etiam non quam lacus suspendisse faucibus interdum posuere lorem. Facilisis volutpat est velit egestas dui id ornare arcu. Non blandit massa enim nec dui nunc mattis enim. Mollis aliquam ut porttitor leo a diam sollicitudin. Euismod nisi porta lorem mollis aliquam ut."
+      ],
+      [
+        "Pulvinar mattis nunc sed blandit libero volutpat. Viverra ipsum nunc aliquet bibendum enim facilisis. In metus vulputate eu scelerisque felis imperdiet proin. Iaculis eu non diam phasellus vestibulum lorem sed. Diam quis enim lobortis scelerisque fermentum. Eget velit aliquet sagittis id consectetur purus ut faucibus pulvinar. Pulvinar etiam non quam lacus suspendisse faucibus interdum posuere lorem. Facilisis volutpat est velit egestas dui id ornare arcu. Non blandit massa enim nec dui nunc mattis enim. Mollis aliquam ut porttitor leo a diam sollicitudin. Euismod nisi porta lorem mollis aliquam ut."
       ]
     ]
   };
@@ -44,7 +50,7 @@ function LoadPreview(props) {
           <div class="card waves-effect waves-block waves-light">
             <div class="card-image">
               <img src="/pictures/duck.jpg" />
-              <span class="card-title">Card Title</span>{" "}
+              <span class="card-title">Card Title</span>
             </div>
             <div class="card-content">
               <p>{props.description}</p>
