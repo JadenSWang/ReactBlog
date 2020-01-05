@@ -45,14 +45,7 @@
           </span>
         </a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li>
-            <div id="nav-icon3">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          </li>
+          <li></li>
         </ul>
       </div>
     </nav>
@@ -63,11 +56,52 @@
     </div>
   </body>
 
+  <!-- FAB -->
+  <div class="fixed-action-btn">
+    <a class="btn-floating btn-large white">
+      <div id="nav-icon3">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </a>
+    <ul>
+      <li>
+        <a class="btn-floating white"
+          ><i class="material-icons black-text">insert_chart</i></a
+        >
+      </li>
+      <li>
+        <a class="btn-floating white"
+          ><i class="material-icons black-text">format_quote</i></a
+        >
+      </li>
+      <li>
+        <a class="btn-floating white"
+          ><i class="material-icons black-text">publish</i></a
+        >
+      </li>
+      <li>
+        <a class="btn-floating white"
+          ><i class="material-icons black-text">attach_file</i></a
+        >
+      </li>
+    </ul>
+  </div>
+
   <style>
     body {
       font-size: 14px;
       font-family: "Open Sans Condensed", sans-serif;
       padding-top: 5%;
+
+      /* hide scrollbar */
+      -ms-overflow-style: none;
+    }
+
+    body::-webkit-scrollbar {
+      display: none;
     }
 
     #blog {
@@ -81,7 +115,7 @@
     }
 
     #nav-icon3 {
-      width: 40px;
+      width: 28px;
       height: 45px;
       position: relative;
       margin-right: 50px;
@@ -94,6 +128,9 @@
       -o-transition: 0.5s ease-in-out;
       transition: 0.5s ease-in-out;
       cursor: pointer;
+
+      margin-top: 20px;
+      margin-left: 14.2px;
     }
 
     #nav-icon3 span {
@@ -121,11 +158,11 @@
 
     #nav-icon3 span:nth-child(2),
     #nav-icon3 span:nth-child(3) {
-      top: 11px;
+      top: 8px;
     }
 
     #nav-icon3 span:nth-child(4) {
-      top: 22px;
+      top: 16px;
     }
 
     #nav-icon3.open span:nth-child(1) {
@@ -153,13 +190,24 @@
       width: 0%;
       left: 50%;
     }
+
+    .card {
+      margin-bottom: 0;
+      margin-top: 0;
+    }
   </style>
 
   <script>
     $(document).ready(function() {
-      $("#nav-icon1,#nav-icon2,#nav-icon3,#nav-icon4").click(function() {
-        $(this).toggleClass("open");
+      $(".fixed-action-btn").hover(function() {
+        $("#nav-icon3").toggleClass("open");
       });
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+      var elems = document.querySelectorAll(".fixed-action-btn");
+      var options = [];
+      var instances = M.FloatingActionButton.init(elems, options);
     });
   </script>
 </html>
