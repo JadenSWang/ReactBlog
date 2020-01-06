@@ -41,7 +41,7 @@
       <div class="nav-wrapper white">
         <a href="#" class="brand-logo center">
           <span class="grey-text text-darken-4">
-            The Average Asian
+            <h2>The Average Asian</h2>
           </span>
         </a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -49,6 +49,11 @@
         </ul>
       </div>
     </nav>
+
+    <!-- Featured Content -->
+    <div id="featured-container" class="container">
+      <div id="featured"></div>
+    </div>
 
     <!-- Articles -->
     <div class="container">
@@ -68,22 +73,34 @@
     </a>
     <ul>
       <li>
-        <a class="btn-floating white"
-          ><i class="material-icons black-text">insert_chart</i></a
+        <a
+          class="waves-effect btn-floating tooltipped white"
+          data-position="left"
+          data-tooltip="I am a tooltip"
+          ><i class="material-icons black-text">add_box </i></a
         >
       </li>
       <li>
-        <a class="btn-floating white"
+        <a
+          class="waves-effect btn-floating tooltipped white"
+          data-position="left"
+          data-tooltip="I am a tooltip"
           ><i class="material-icons black-text">format_quote</i></a
         >
       </li>
       <li>
-        <a class="btn-floating white"
+        <a
+          class="waves-effect btn-floating tooltipped white"
+          data-position="left"
+          data-tooltip="I am a tooltip"
           ><i class="material-icons black-text">publish</i></a
         >
       </li>
       <li>
-        <a class="btn-floating white"
+        <a
+          class="waves-effect btn-floating tooltipped white"
+          data-position="left"
+          data-tooltip="I am a tooltip"
           ><i class="material-icons black-text">attach_file</i></a
         >
       </li>
@@ -94,7 +111,7 @@
     body {
       font-size: 14px;
       font-family: "Open Sans Condensed", sans-serif;
-      padding-top: 5%;
+      margin-top: 3%;
 
       /* hide scrollbar */
       -ms-overflow-style: none;
@@ -108,6 +125,12 @@
       margin-top: 9%;
     }
 
+    /* Featured */
+    #featured-container {
+      margin-top: 6%;
+      margin-bottom: 20%;
+    }
+
     /* Something Cool */
     * {
       margin: 0;
@@ -115,7 +138,7 @@
     }
 
     #nav-icon3 {
-      width: 28px;
+      width: 25px;
       height: 45px;
       position: relative;
       margin-right: 50px;
@@ -130,7 +153,7 @@
       cursor: pointer;
 
       margin-top: 20px;
-      margin-left: 14.2px;
+      margin-left: 15.5px;
     }
 
     #nav-icon3 span {
@@ -190,11 +213,6 @@
       width: 0%;
       left: 50%;
     }
-
-    .card {
-      margin-bottom: 0;
-      margin-top: 0;
-    }
   </style>
 
   <script>
@@ -204,6 +222,13 @@
       });
     });
 
+    // Tooltips
+    document.addEventListener("DOMContentLoaded", function() {
+      var elems = document.querySelectorAll(".tooltipped");
+      var instances = M.Tooltip.init(elems, []);
+    });
+
+    // Floating Action Button
     document.addEventListener("DOMContentLoaded", function() {
       var elems = document.querySelectorAll(".fixed-action-btn");
       var options = [];
