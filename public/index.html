@@ -37,7 +37,7 @@
   <body>
     <noscript>You need to enable JavaScript to run this website.</noscript>
     <!-- NavBar -->
-    <nav class="z-depth-0">
+    <a class="z-depth-0">
       <div class="nav-wrapper white">
         <a href="#" class="brand-logo center">
           <span class="grey-text text-darken-4">
@@ -45,10 +45,9 @@
           </span>
         </a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li></li>
         </ul>
       </div>
-    </nav>
+    </a>
 
     <!-- Featured Content -->
     <div id="featured-container" class="container">
@@ -57,55 +56,135 @@
 
     <!-- Articles -->
     <div class="container">
+      <nav>
+        <div class="nav-wrapper grey lighten-2">
+          <form>
+            <div class="input-field">
+              <input id="search" type="search" required />
+              <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+              <div id="menuclearbtn"><i class="material-icons">close</i></div>
+            </div>
+          </form>
+        </div>
+      </nav>
+
       <div id="blog"></div>
     </div>
-  </body>
 
-  <!-- FAB -->
-  <div class="fixed-action-btn">
-    <a class="btn-floating btn-large white">
-      <div id="nav-icon3">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
+    <!-- FAB -->
+    <div class="fixed-action-btn">
+      <a class="btn-floating btn-large white">
+        <div id="nav-icon3">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </a>
+      <ul>
+        <li>
+          <a
+            class="waves-effect btn-floating tooltipped white pulse modal-trigger"
+            data-position="left"
+            data-tooltip="Subscribe"
+            href="#modal1"
+            ><i class="material-icons black-text">notifications_active</i></a
+          >
+        </li>
+        <li>
+          <a
+            class="waves-effect btn-floating tooltipped white"
+            data-position="left"
+            data-tooltip="Sign In"
+            ><i class="material-icons black-text">account_circle</i></a
+          >
+        </li>
+        <li>
+          <a
+            class="waves-effect btn-floating tooltipped white"
+            data-position="left"
+            data-tooltip="I am a tooltip"
+            ><i class="material-icons black-text">publish</i></a
+          >
+        </li>
+        <li>
+          <a
+            class="waves-effect btn-floating tooltipped white"
+            data-position="left"
+            data-tooltip="I am a tooltip"
+            ><i class="material-icons black-text">attach_file</i></a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <!-- Modal Sign In -->
+    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+    
+    <!-- Modal Subscribe -->
+    <div id="modal1" class="modal modal-fixed-footer">
+      <div class="modal-content">
+          <h4>Continue Reading?</h4>
+          <p>A bunch of text</p>
       </div>
-    </a>
-    <ul>
-      <li>
-        <a
-          class="waves-effect btn-floating tooltipped white"
-          data-position="left"
-          data-tooltip="I am a tooltip"
-          ><i class="material-icons black-text">add_box </i></a
-        >
-      </li>
-      <li>
-        <a
-          class="waves-effect btn-floating tooltipped white"
-          data-position="left"
-          data-tooltip="I am a tooltip"
-          ><i class="material-icons black-text">format_quote</i></a
-        >
-      </li>
-      <li>
-        <a
-          class="waves-effect btn-floating tooltipped white"
-          data-position="left"
-          data-tooltip="I am a tooltip"
-          ><i class="material-icons black-text">publish</i></a
-        >
-      </li>
-      <li>
-        <a
-          class="waves-effect btn-floating tooltipped white"
-          data-position="left"
-          data-tooltip="I am a tooltip"
-          ><i class="material-icons black-text">attach_file</i></a
-        >
-      </li>
-    </ul>
-  </div>
+      <div class="modal-footer">
+          <a
+            id="modalclosebutton"
+            href="#!"
+            class="modal-close waves-effect waves-green btn-flat"
+          >Agree</a
+         >
+      </div>
+    </div>
+  </body>
+  </html>
+  <script>
+    function onSignIn(googleUser) {
+      // Useful data for your client-side scripts:
+      var profile = googleUser.getBasicProfile();
+      console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+      console.log("Full Name: " + profile.getName());
+      console.log("Given Name: " + profile.getGivenName());
+      console.log("Family Name: " + profile.getFamilyName());
+      console.log("Image URL: " + profile.getImageUrl());
+      console.log("Email: " + profile.getEmail());
+
+      // The ID token you need to pass to your backend:
+      var id_token = googleUser.getAuthResponse().id_token;
+      console.log("ID Token: " + id_token);
+    }
+    
+    $("#search").keydown(() => {
+      var blogTitles = $(".blogPreview");
+      for (var i = 0; i < blogTitles.length; i++) {
+        $(blogTitles[i]).hide();
+      }
+
+      for (var i = 0; i < blogTitles.length; i++) {
+        if (
+          $(blogTitles[i])
+            .text()
+            .toUpperCase()
+            .indexOf(
+              $("#search")
+                .val()
+                .toUpperCase()
+            ) > -1
+        ) {
+          $(blogTitles[i]).show();
+        }
+      }
+    });
+
+    $(".pushpin").each(function() {
+      var $this = $(this);
+      var $target = $("#" + $(this).attr("data-target"));
+      $this.pushpin({
+        top: $target.offset().top,
+        bottom: $target.offset().top + $target.outerHeight() - $this.height()
+      });
+    });
+  </script>
 
   <style>
     body {
@@ -122,7 +201,7 @@
     }
 
     #blog {
-      margin-top: 9%;
+      margin-top: 3%;
     }
 
     /* Featured */
@@ -217,22 +296,23 @@
 
   <script>
     $(document).ready(function() {
-      $(".fixed-action-btn").hover(function() {
+      $(".fixed-action-btn").click(function() {
         $("#nav-icon3").toggleClass("open");
       });
     });
 
-    // Tooltips
-    document.addEventListener("DOMContentLoaded", function() {
-      var elems = document.querySelectorAll(".tooltipped");
-      var instances = M.Tooltip.init(elems, []);
-    });
-
     // Floating Action Button
     document.addEventListener("DOMContentLoaded", function() {
-      var elems = document.querySelectorAll(".fixed-action-btn");
-      var options = [];
-      var instances = M.FloatingActionButton.init(elems, options);
+      // floating action buttons
+      var elems_fab = document.querySelectorAll(".fixed-action-btn");
+      M.FloatingActionButton.init(elems_fab, { hoverEnabled: false });
+
+      // tooltips
+      var elems_tooltip = document.querySelectorAll(".tooltipped");
+      M.Tooltip.init(elems_tooltip, {});
+
+      var elems_modal = document.querySelectorAll(".modal");
+      var instances = M.Modal.init(elems_modal, {});
     });
   </script>
 </html>
