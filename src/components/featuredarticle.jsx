@@ -2,7 +2,9 @@ import React, { Component } from "react";
 
 class FeaturedArticle extends Component {
 	render() {
-		var article = require("../articles/" + this.props.articleName + ".json");
+		var article = require("../articles/" +
+			this.props.articleName +
+			".json");
 
 		return (
 			<React.Fragment>

@@ -1,55 +1,21 @@
 import React, { Component } from "react";
+var fs = require("fs");
+var path = require("path");
 
 class Blog extends Component {
-	state = {
-		articles: [
-			[["Ducks are slowly taking over the world"], ["A brand new "]],
-			[["Ducks are slowly taking over the world"], ["A brand new "]],
-			[["Ducks are slowly taking over the world"], ["A brand new "]],
-			[["Ducks are slowly taking over the world"], ["A brand new "]],
-			[["Ducks are slowly taking over the world"], ["A brand new "]],
-			[["Ducks are slowly taking over the world"], ["A brand new "]],
-			[["Ducks are slowly taking over the world"], ["A brand new "]],
-			[["Ducks are slowly taking over the world"], ["A brand new "]],
-			[["Ducks are slowly taking over the world"], ["A brand new "]],
-			[["Ducks are slowly taking over the world"], ["A brand new "]],
-			[["Ducks are slowly taking over the world"], ["A brand new "]],
-			[["Ducks are slowly taking over the world"], ["A brand new "]],
-			[["Ducks are slowly taking over the world"], ["A brand new "]],
-			[["Ducks are slowly taking over the world"], ["A brand new "]],
-			[["Ducks are slowly taking over the world"], ["A brand new "]],
-			[["Ducks are slowly taking over the world"], ["A brand new "]],
-			[["Ducks are slowly taking over the world"], ["A brand new "]],
-			[["Ducks are slowly taking over the world"], ["A brand new "]],
-			[["Ducks are slowly taking over the world"], ["A brand new "]],
-			[["Ducks are slowly taking over the world"], ["A brand new "]],
-			[["Ducks are slowly taking over the world"], ["A brand new "]],
-			[["Ducks are slowly taking over the world"], ["A brand new "]],
-			[["Ducks are slowly taking over the world"], ["A brand new "]],
-			[["Ducks are slowly taking over the world"], ["A brand new "]],
-			[["Ducks are slowly taking over the world"], ["A brand new "]],
-			[["Ducks are slowly taking over the world"], ["A brand new "]],
-			[["Ducks are slowly taking over the world"], ["A brand new "]]
-		]
-	};
 	render() {
 		return (
 			<React.Fragment>
-				<div class="row">{loadPreviews(this.state.articles)}</div>
+				<div class="row">{loadPreviews()}</div>
 			</React.Fragment>
 		);
 	}
 }
 
-function loadPreviews(articles) {
-	const elements = [];
-
-	for (var i = 0; i < articles.length; i++) {
-		elements.push(
-			LoadPreview({ title: articles[i][0], description: articles[i][1] })
-		);
-	}
-
+function loadPreviews() {
+	var elements;
+	var article = require("../articles");
+	console.log(article);
 	return elements;
 }
 
