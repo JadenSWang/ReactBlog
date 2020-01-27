@@ -2,11 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
-import Blog from "./components/blog/blog";
-import FeaturedArticle from "./components/featuredarticle";
+import Blog from "./components/Blog";
+import FeaturedArticle from "./components/FeaturedArticle"; //"./components/BlogPosts";
 
 ReactDOM.render(
-	<FeaturedArticle articleName="duck" />,
+	<FeaturedArticle articleId="duck" />,
 	document.getElementById("featured")
 );
 ReactDOM.render(<Blog />, document.getElementById("blog"));

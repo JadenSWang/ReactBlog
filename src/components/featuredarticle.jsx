@@ -2,9 +2,10 @@ import React, { Component } from "react";
 
 class FeaturedArticle extends Component {
 	render() {
-		var article = require("../articles/" +
-			this.props.articleName +
-			".json");
+		var article = getArticle(
+			require("../articles.json"),
+			this.props.articleId
+		);
 
 		return (
 			<React.Fragment>
@@ -28,6 +29,19 @@ class FeaturedArticle extends Component {
 			</React.Fragment>
 		);
 	}
+}
+
+function getArticle(articles, id) {
+	var article;
+	for (var i = 0; i < articles.length; i++) {
+		console.log(articles[i].id, id);
+		if (articles[i].id == id) {
+			article = articles[i];
+			i = articles.length;
+		}
+	}
+
+	return article;
 }
 
 export default FeaturedArticle;

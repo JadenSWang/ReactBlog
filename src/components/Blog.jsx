@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-var fs = require("fs");
-var path = require("path");
+// import * as RNFS from "react-native-fs";
 
 class Blog extends Component {
 	render() {
@@ -12,12 +11,7 @@ class Blog extends Component {
 	}
 }
 
-function loadPreviews() {
-	var elements;
-	var article = require("../articles");
-	console.log(article);
-	return elements;
-}
+function loadPreviews() {}
 
 function LoadPreview(props) {
 	return (

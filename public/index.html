@@ -68,7 +68,9 @@
 							<label class="label-icon" for="search"
 								><i class="material-icons">search</i></label
 							>
-							<div id="menuclearbtn"><i class="material-icons">close</i></div>
+							<div id="menuclearbtn">
+								<i class="material-icons">close</i>
+							</div>
 						</div>
 					</form>
 				</div>
@@ -94,7 +96,9 @@
 						data-position="left"
 						data-tooltip="Subscribe"
 						href="#subscribemodal"
-						><i class="material-icons black-text">notifications_active</i></a
+						><i class="material-icons black-text"
+							>notifications_active</i
+						></a
 					>
 				</li>
 				<li>
@@ -103,7 +107,9 @@
 						data-position="left"
 						data-tooltip="Sign In"
 						href="#signinmodal"
-						><i class="material-icons black-text">account_circle</i></a
+						><i class="material-icons black-text"
+							>account_circle</i
+						></a
 					>
 				</li>
 				<li>
@@ -206,7 +212,10 @@
 			var $target = $("#" + $(this).attr("data-target"));
 			$this.pushpin({
 				top: $target.offset().top,
-				bottom: $target.offset().top + $target.outerHeight() - $this.height()
+				bottom:
+					$target.offset().top +
+					$target.outerHeight() -
+					$this.height()
 			});
 		});
 	</script>
