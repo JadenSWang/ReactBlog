@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ReactDOM from "react-dom";
 import ArticlePreview from "./ArticlePreview";
 
 class Previews extends Component {
@@ -17,8 +18,9 @@ function generatePreviews() {
 
 	for (var i = 0; i < articles.length; i++) {
 		toReturn.push(<ArticlePreview article={articles[i]} />);
-		console.log(articles[i]);
 	}
+
+	return toReturn;
 }
 
 export default Previews;
