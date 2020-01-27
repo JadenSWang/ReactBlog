@@ -1,3 +1,6 @@
+/**
+ * Article featured at the top of the landing page
+ */
 import React, { Component } from "react";
 
 class FeaturedArticle extends Component {

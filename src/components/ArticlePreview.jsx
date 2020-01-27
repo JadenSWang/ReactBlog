@@ -1,3 +1,7 @@
+/**
+ * Article gallery previewer
+ */
+
 import React, { Component } from "react";
 
 class ArticlePreview extends Component {

@@ -1,5 +1,8 @@
+/**
+ * Holds and renders all previews inside the gallery
+ */
+
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
 import ArticlePreview from "./ArticlePreview";
 
 class Previews extends Component {
