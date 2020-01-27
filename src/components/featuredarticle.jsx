@@ -1,8 +1,15 @@
+/**
+ * Article featured at the top of the landing page
+ */
 import React, { Component } from "react";
 
 class FeaturedArticle extends Component {
-	state = { articleName: "something.txt" };
 	render() {
+		var article = getArticle(
+			require("../articles.json"),
+			this.props.articleId
+		);
+
 		return (
 			<React.Fragment>
 				<div class="col s12 m8">
@@ -10,28 +17,33 @@ class FeaturedArticle extends Component {
 						<div class="card-stacked">
 							<div class="card-content">
 								<h6>FEATURED</h6>
-								<h3>Inflatable Duck in Hong Kong Harbor</h3>
-								<h6>
-									GIANT RUBBER DUCK SPOTTED IN HONG KONG HARBOR. EXPERTS
-									CONFUSED SAYING THIS MAY BE THE WORK OF GOD OR SOME
-									EXTRATERRESTRIAL BEING.
-								</h6>
+								<h3>{article.title}</h3>
+								<h6>{article.description}</h6>
 							</div>
 							<div class="card-action">
 								<a href="#!">Continue Reading</a>
 							</div>
 						</div>
 						<div class="card-image">
-							<img
-								src="https://inhabitat.com/wp-content/blogs.dir/1/files/2013/05/Rubber-Duck-Florentijin-Hofman-1.jpg"
-								alt=""
-							/>
+							<img src={article.thumbnail} alt="" />
 						</div>
 					</div>
 				</div>
 			</React.Fragment>
 		);
 	}
+}
+
+function getArticle(articles, id) {
+	var article;
+	for (var i = 0; i < articles.length; i++) {
+		if (articles[i].id == id) {
+			article = articles[i];
+			i = articles.length;
+		}
+	}
+
+	return article;
 }
 
 export default FeaturedArticle;

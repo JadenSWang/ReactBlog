@@ -2,8 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
-import Blog from "./components/blog/blog";
-import FeaturedArticle from "./components/featuredarticle";
+import Previews from "./components/Previews";
+import FeaturedArticle from "./components/FeaturedArticle"; //"./components/BlogPosts";
 
-ReactDOM.render(<FeaturedArticle />, document.getElementById("featured"));
-ReactDOM.render(<Blog />, document.getElementById("blog"));
+ReactDOM.render(
+	<FeaturedArticle articleId="duck" />,
+	document.getElementById("featured")
+);
+ReactDOM.render(<Previews />, document.getElementById("previews"));
