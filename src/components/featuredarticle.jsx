@@ -34,7 +34,6 @@ class FeaturedArticle extends Component {
 function getArticle(articles, id) {
 	var article;
 	for (var i = 0; i < articles.length; i++) {
-		console.log(articles[i].id, id);
 		if (articles[i].id == id) {
 			article = articles[i];
 			i = articles.length;

@@ -2,9 +2,7 @@ import React, { Component } from "react";
 
 class ArticlePreview extends Component {
 	render() {
-		var article = getArticle(
-			require("../articles.json", this.props.articleId)
-		);
+		var article = this.props.article;
 
 		return (
 			<div class="blogPreview">
@@ -24,18 +22,6 @@ class ArticlePreview extends Component {
 			</div>
 		);
 	}
-}
-
-function getArticle(articles, id) {
-	var article;
-	for (var i = 0; i < articles.length; i++) {
-		if (articles[i].id.equals(id)) {
-			article = articles[i];
-			i = articles.length;
-		}
-	}
-
-	return article;
 }
 
 export default ArticlePreview;

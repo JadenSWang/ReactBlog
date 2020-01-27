@@ -13,9 +13,12 @@ class Previews extends Component {
 
 function generatePreviews() {
 	var articles = require("../articles.json");
-	var toReturn;
+	var toReturn = [];
 
-	for (var i = 0; i < articles.length; i++) {}
+	for (var i = 0; i < articles.length; i++) {
+		toReturn.push(<ArticlePreview article={articles[i]} />);
+		console.log(articles[i]);
+	}
 }
 
 export default Previews;
