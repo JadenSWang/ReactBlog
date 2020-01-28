@@ -15,5 +15,8 @@ document.addEventListener("DOMContentLoaded", function() {
 	M.Tooltip.init(elems_tooltip, {});
 
 	var elems_modal = document.querySelectorAll(".modal");
-	var instances = M.Modal.init(elems_modal, {});
+	M.Modal.init(elems_modal, {});
+
+	var elems_taptarget = document.querySelectorAll(".tap-target");
+	M.TapTarget.init(elems_taptarget, {});
 });

@@ -9,7 +9,7 @@ class Previews extends Component {
 	render() {
 		return (
 			<React.Fragment>
-				<div class="row">{generatePreviews()}</div>
+				<div className="row">{generatePreviews()}</div>
 			</React.Fragment>
 		);
 	}
