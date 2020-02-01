@@ -9,15 +9,17 @@ class ArticlePreview extends Component {
 		var article = this.props.article;
 
 		return (
-			<div class="blogPreview">
-				<div class="col s12 m4">
-					<div class="z-depth-0">
-						<div class="card hoverable waves-effect waves-block waves-light">
-							<div class="card-image">
+			<div className="blogPreview">
+				<div className="col s12 m4">
+					<div className="z-depth-0">
+						<div className="card hoverable waves-effect waves-block waves-light">
+							<div className="card-image">
 								<img src={article.thumbnail} alt="" />
-								<span class="card-title">{article.title}</span>
+								<span className="card-title">
+									{article.title}
+								</span>
 							</div>
-							<div class="card-content">
+							<div className="card-content">
 								<p>{article.description}</p>
 							</div>
 						</div>

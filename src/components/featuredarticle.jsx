@@ -12,19 +12,19 @@ class FeaturedArticle extends Component {
 
 		return (
 			<React.Fragment>
-				<div class="col s12 m8">
-					<div class="card horizontal">
-						<div class="card-stacked">
-							<div class="card-content">
+				<div className="col s12 m8">
+					<div className="card horizontal">
+						<div className="card-stacked">
+							<div className="card-content">
 								<h6>FEATURED</h6>
 								<h3>{article.title}</h3>
 								<h6>{article.description}</h6>
 							</div>
-							<div class="card-action">
+							<div className="card-action">
 								<a href="#!">Continue Reading</a>
 							</div>
 						</div>
-						<div class="card-image">
+						<div className="card-image">
 							<img src={article.thumbnail} alt="" />
 						</div>
 					</div>
@@ -37,7 +37,7 @@ class FeaturedArticle extends Component {
 function getArticle(articles, id) {
 	var article;
 	for (var i = 0; i < articles.length; i++) {
-		if (articles[i].id == id) {
+		if (articles[i].id === id) {
 			article = articles[i];
 			i = articles.length;
 		}
