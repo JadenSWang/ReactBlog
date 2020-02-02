@@ -12,19 +12,19 @@ class ArticlePreview extends Component {
 			<div className="blogPreview">
 				<div className="col s12 m4">
 					<div className="z-depth-0">
-						<div
-							className="card hoverable waves-effect waves-block waves-light"
-							href="#!">
-							<div className="card-image">
-								<img src={article.thumbnail} alt="" />
-								<span className="card-title">
-									{article.title}
-								</span>
+						<a href={"article/" + article.id}>
+							<div className="card hoverable waves-effect waves-block waves-light black-text">
+								<div className="card-image">
+									<img src={article.thumbnail} alt="" />
+									<span className="card-title">
+										{article.title}
+									</span>
+								</div>
+								<div className="card-content">
+									<p>{article.description}</p>
+								</div>
 							</div>
-							<div className="card-content">
-								<p>{article.description}</p>
-							</div>
-						</div>
+						</a>
 					</div>
 				</div>
 			</div>
