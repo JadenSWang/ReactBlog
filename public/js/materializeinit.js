@@ -6,6 +6,10 @@ $(document).ready(function() {
 
 // Floating Action Button
 document.addEventListener("DOMContentLoaded", function() {
+	// floating action buttons
+	var elems_fab = document.querySelectorAll(".fixed-action-btn");
+	M.FloatingActionButton.init(elems_fab, { hoverEnabled: false });
+
 	// tooltips
 	var elems_tooltip = document.querySelectorAll(".tooltipped");
 	M.Tooltip.init(elems_tooltip, {});

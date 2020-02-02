@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import SubscribeModal from "./SubscribeModal";
+import SignInModal from "./SignInModal";
 
 class FAB extends Component {
 	state = {};
@@ -6,7 +8,9 @@ class FAB extends Component {
 		return (
 			<React.Fragment>
 				<div className="fixed-action-btn">
-					<a className="btn-floating btn-large white">
+					<a
+						className="btn-floating btn-large white"
+						href="#SubscribeModal">
 						<div id="nav-icon3">
 							<span></span>
 							<span></span>
@@ -20,7 +24,7 @@ class FAB extends Component {
 								className="waves-effect btn-floating tooltipped white pulse modal-trigger"
 								data-position="left"
 								data-tooltip="Subscribe"
-								href="#subscribemodal">
+								href="#SubscribeModal">
 								<i className="material-icons black-text">
 									notifications_active
 								</i>
@@ -28,10 +32,10 @@ class FAB extends Component {
 						</li>
 						<li>
 							<a
-								className="waves-effect btn-floating tooltipped white"
+								className="waves-effect btn-floating tooltipped white pulse modal-trigger"
 								data-position="left"
 								data-tooltip="Sign In"
-								href="#signinmodal">
+								href="#SignInModal">
 								<i className="material-icons black-text">
 									account_circle
 								</i>
@@ -41,7 +45,8 @@ class FAB extends Component {
 							<a
 								className="waves-effect btn-floating tooltipped white"
 								data-position="left"
-								data-tooltip="I am a tooltip">
+								data-tooltip="I am a tooltip"
+								href="#!">
 								<i className="material-icons black-text">
 									publish
 								</i>
@@ -51,7 +56,8 @@ class FAB extends Component {
 							<a
 								className="waves-effect btn-floating tooltipped white"
 								data-position="left"
-								data-tooltip="I am a tooltip">
+								data-tooltip="I am a tooltip"
+								href="#!">
 								<i className="material-icons black-text">
 									attach_file
 								</i>
@@ -59,6 +65,9 @@ class FAB extends Component {
 						</li>
 					</ul>
 				</div>
+
+				<SubscribeModal />
+				<SignInModal />
 			</React.Fragment>
 		);
 	}
