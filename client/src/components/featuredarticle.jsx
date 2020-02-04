@@ -4,11 +4,15 @@
 import React, { Component } from "react";
 
 class FeaturedArticle extends Component {
+	state = { article: {} };
+	componentDidMount() {
+		fetch("/article?title=" + this.props.articleId)
+			.then(res => res.json())
+			.then(article => this.setState({ article }));
+	}
+
 	render() {
-		var article = getArticle(
-			require("../articles.json"),
-			this.props.articleId
-		);
+		var article = this.state.article;
 
 		return (
 			<React.Fragment>

@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 
 import Previews from "./components/Previews";
-import FeaturedArticle from "./components/featuredarticle";
+import FeaturedArticle from "./components/FeaturedArticle";
 import FAB from "./components/FAB";
 
 ReactDOM.render(
