@@ -1,6 +1,5 @@
 const express = require("express");
-const fs = require("fs");
-const createError = require("http-errors");
+const fs = require("fs"); 
 require("../public/posts/duck.json");
 
 const router = express.Router();
